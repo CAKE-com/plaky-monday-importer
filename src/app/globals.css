@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-roboto);
+  --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  --color-cake-brand-50: #def5ff;
+  --color-cake-brand-100: #bdeafe;
+  --color-cake-brand-500: #027db6;
+  --color-cake-brand-550: #016997;
+  --color-cake-brand-700: #01557b;
+  --color-cake-grey-50: #f9fafb;
+  --color-cake-grey-150: #eef2f5;
+  --color-cake-grey-200: #e4eaef;
+  --color-cake-grey-250: #d7e2ea;
+  --color-cake-grey-500: #75878f;
+  --color-cake-grey-670: #3e525b;
+  --color-cake-line: #dfe4eb;
+  --color-cake-muted: #3e525b;
+  --color-cake-ink: #0a0e0f;
+  --color-cake-ground: #f2f6f8;
+  --color-cake-red-500: #bc3232;
+  --color-cake-red-700: #9a2727;
+  --color-cake-red-10: #fcf2f2;
+  --color-cake-warn: #8a5a00;
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: #0a0e0f;
+  --border: #d7e2ea;
+  --ring: #027db6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+@layer components {
+  .sheet {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .sheet a {
+    color: var(--color-cake-brand-550);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .sheet :is(a, button, input, select, summary):focus-visible {
+    outline: 2px solid var(--color-cake-brand-500);
+    outline-offset: 2px;
+  }
+  .sheet a.step-link { text-decoration: none; }
+  .sheet a.step-link:hover { background: var(--color-cake-brand-50); }
+  .sheet summary { overflow-wrap: anywhere; }
+  .sheet :is(input, select) { max-width: 100%; }
+  .sheet [data-testid="departure-preflight"] h3 { font-size: 15px; }
+  .sheet [data-testid="departure-preflight"] [data-category] { background: white; }
+}
+
+@media print {
+  .support-details::details-content { display: block; content-visibility: visible; }
+  .support-details > summary { list-style: none; }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE `migrations` ADD `resume` text;

@@ -1,0 +1,1 @@
+ALTER TABLE `connections` ADD `monday_account_slug` text;

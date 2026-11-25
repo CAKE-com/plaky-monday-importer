@@ -1,0 +1,1 @@
+ALTER TABLE `connections` ADD `plaky_web_base` text;

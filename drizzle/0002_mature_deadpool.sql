@@ -1,0 +1,1 @@
+ALTER TABLE `migrations` ADD `readiness_ticks` text DEFAULT '[]' NOT NULL;

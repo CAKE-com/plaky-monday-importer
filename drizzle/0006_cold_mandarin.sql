@@ -1,0 +1,1 @@
+ALTER TABLE `migration_boards` ADD `synced_read_at` integer;
